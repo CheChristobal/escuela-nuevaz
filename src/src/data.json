@@ -1,0 +1,37 @@
+{
+    "profesores": [
+      {
+        "nombre": "María García",
+        "logro": "Profesora de Musica",
+        "foto": "/img/placeholderalumno.png"
+      },
+      {
+        "nombre": "Juan Martínez",
+        "logro": "Profesor de Lenguaje",
+        "foto": "/img/placeholderalumno.png"
+      },
+      {
+        "nombre": "Ana López",
+        "logro": "Profesora de Ingles",
+        "foto": "/img/placeholderalumno.png"
+      }
+    ],
+    "directiva": [
+      {
+        "nombre": "Carlos Rodríguez",
+        "logro": "Director General",
+        "foto": "/img/placeholderalumno.png"
+      },
+      {
+        "nombre": "Luisa Pérez",
+        "logro": "Directora de Finanzas",
+        "foto": "/img/placeholderalumno.png"
+      },
+      {
+        "nombre": "Elena Gómez",
+        "logro": "Directora Académica",
+        "foto": "/img/placeholderalumno.png"
+      }
+    ]
+  }
+  

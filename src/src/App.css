@@ -1,0 +1,365 @@
+/* Estilos para el navbar */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+li{
+  list-style: none;
+
+}
+
+nav ul .navbar{
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  background-color: #285599;
+  padding: 1rem 0;
+  border-bottom: 3px solid red;
+  border-top: 3px solid red;
+  position: fixed; /* Fija el navbar en la parte superior de la página */
+  width: 100%; /* Ocupa todo el ancho */
+  z-index: 1000; /* Asegura que el navbar esté en la capa superior */
+}
+
+nav li {
+  margin: 0 1rem;
+}
+
+/* Estilos para el enlace activo */
+nav a.active {
+  color: red; /* Cambia el color del enlace activo */
+}
+
+/* Estilos para el enlace */
+nav a {
+  text-decoration: none;
+  color: white;
+}
+
+/* Estilos para la imagen de fondo */
+.hero 
+/* Agrega aquí los nombres de las demás secciones */
+{
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+  padding: 6rem 0;
+  color: rgb(252, 247, 247);
+  font-size: 3rem;
+  opacity: 0; /* Inicialmente, ocultar la sección */
+  animation: entrada 6s forwards; /* Aplicar la animación de entrada */
+  
+}
+
+.hero
+/* Agrega aquí los nombres de las demás secciones */
+{
+  -webkit-text-stroke: 2px red; /* Borde de texto rojo */
+  text-stroke: 2px red; /* Borde de texto rojo */
+  text-fill-color: transparent; /* Relleno de texto transparente para mostrar el borde */
+}
+
+@keyframes entrada {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Estilos para la imagen de fondo */
+.hero:before
+/* Agrega aquí los nombres de las demás secciones */
+{
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  top: 20px;
+  width: 100%;
+  height: 100%;
+  background-image: url('img/fondoescuela.jpg'); /* Asegúrate de ajustar la ruta de la imagen */
+  background-size: cover;
+  background-position: 0px;
+  z-index: -1;
+}
+
+
+
+/* Media query para pantallas de celular */
+@media (max-width: 767px) {
+  .hero:before {
+    background-image: url('img/celularfondo.jpg'); /* Nueva imagen de fondo para celular */
+    background-position: right; /* Mover la imagen hacia la derecha en celular */
+    
+  }
+}
+
+
+
+
+/* Estilos para el contenido */
+.content {
+  padding: 3rem 0;
+  text-align: center;
+}
+
+/* Estilos para el footer */
+footer {
+  background-color: #3032b1;
+  color: white;
+  text-align: center;
+  padding: 1rem 0;
+  border: 6px solid rgb(209, 32, 32);
+  border: 6px solid rgb(216, 60, 60);
+}
+
+/* Estilos para las tarjetas */
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.card {
+  background-color: #f2f2f2;
+  border: 1px solid #ccc;
+  padding: 20px;
+  width: calc(33.33% - 20px);
+  box-sizing: border-box;
+  margin-bottom: 20px;
+  border-radius: 20px; /* Ajusta este valor para cambiar la curvatura de los bordes */
+  transition: transform 0.2s, box-shadow 0.2s; /* Agregamos una transición suave */
+}
+
+.card:hover {
+  transform: translateY(-15px); /* Cambia la posición en el eje Y al hacer hover */
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2); /* Cambia la sombra al hacer hover */
+}
+
+.card:active {
+  transform: translateY(0); /* Vuelve a la posición original al hacer clic */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Restaura la sombra al hacer clic */
+}
+
+h3 {
+  margin-top: 0;
+}
+
+/* Estilos para imágenes y otros elementos */
+.image-container {
+  margin-top: 20px;
+  text-align: center;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Media query para diseño responsive */
+@media (max-width: 768px) {
+
+  li{
+    list-style: none;
+
+  }
+  .hero{
+    z-index: -2;
+
+  }
+  .card {
+    width: calc(50% - 20px);
+  }
+}
+/* Media query para diseño responsive */
+@media (max-width: 768px) {
+  .card-container {
+    flex-direction: column; /* Cambia la dirección del flexbox a columna */
+    align-items: center; /* Centra las tarjetas horizontalmente */
+  }
+  
+
+  .card {
+    width: 100%; /* Ocupa todo el ancho disponible */
+  }
+
+  .card.expanded {
+    width: 90%; /* Ancho ampliado para la tarjeta expandida */
+    margin: 0 auto; /* Centra la tarjeta */
+  }
+
+  .card.expanded p {
+    display: block; /* Muestra el contenido oculto en la tarjeta expandida */
+  }
+
+  footer {
+    text-align: center;
+  }
+
+  p {
+    text-align: center;
+    padding-right: 20px;
+  }
+
+  img {
+    text-align: center;
+    margin: 0 auto; /* Centra la tarjeta */
+  }
+
+  h1 {
+    text-align: center;
+  }
+
+  .hero {
+    text-align: center;
+    padding-right: 20px;
+  }
+
+  
+  
+}
+p {
+  font-size: 25px;
+}
+
+/* Animación de carga con desvanecido */
+@keyframes entrada {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+ 
+/* Estilos para el botón flotante */
+.btn-flotante {
+  position: fixed;
+  bottom: 30px;
+  right: 20px;
+  background-color: transparent;
+  color: rgb(42, 28, 61);
+  border: none;
+  padding: 10px;
+  font-size: 3px;
+  cursor: pointer;
+  border-radius: 50%;
+  z-index: 1001;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.btn-flotante.hovered {
+  background-color: #436eb8;
+  transform: scale(1.3);
+}
+
+.logo-container{
+  justify-content: space-evenly;
+  height: 30px;
+  width: 45px;
+  align-items: start;
+  
+}
+.logo-container img {
+  width: 100%;
+  padding: 10px;
+  object-position:start;
+  object-fit: cover;
+  align-items: start;
+
+}
+
+
+/* Estilos para el contenedor de redes sociales */
+.redes-sociales-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px; /* Ajusta el margen superior según tus necesidades */
+}
+
+/* Estilos para los iconos de redes sociales */
+.icon-container {
+  margin: 0 10px; /* Espacio entre los iconos */
+}
+
+
+
+/* Estilos para el contenedor de redes sociales */
+.redes-sociales-container {
+  display: flex;
+  justify-content: center;
+  align-items: center; /* Alinea verticalmente los iconos */
+  margin-top: 20px; /* Ajusta el margen superior según tus necesidades */
+}
+
+/* Estilos para los iconos de redes sociales */
+.icon-container {
+  margin: 0 10px; /* Espacio entre los iconos */
+}
+
+/* Estilos para el contenedor de redes sociales */
+.redes-sociales-container {
+  display: flex;
+  justify-content: center; /* Alinea los iconos a la derecha */
+  align-items: center; /* Alinea verticalmente los iconos */
+  margin-top: 20px; /* Ajusta el margen superior según tus necesidades */
+}
+
+/* Estilos para los iconos de redes sociales */
+.icon-container {
+  margin: 0 10px; /* Espacio entre los iconos */
+}
+.events-component {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centrar horizontalmente */
+  justify-content: center; /* Centrar verticalmente */
+  background-color: #f7f7f7;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.event-list {
+  list-style: none;
+  padding: 0;
+  width: 100%; /* Opcional: para hacer que la lista ocupe todo el ancho disponible */
+}
+
+.event {
+  display: flex;
+  margin-bottom: 20px;
+  width: 100%; /* Opcional: para hacer que los eventos ocupen todo el ancho disponible */
+  background-color: #f2f2f2;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.event-date {
+  flex: 0 0 100px;
+  background-color: #FF6B6B; /* Color llamativo */
+  color: white; /* Texto en color blanco */
+  text-align: center;
+  padding: 10px;
+  border-radius: 5px 0 0 5px;
+}
+
+.event-details {
+  flex: 1;
+  padding-left: 15px;
+}
+
+.event h3 {
+  margin-top: 0;
+  color: #333; /* Color de texto para el título del evento */
+}
+
+.event p {
+  margin-bottom: 0;
+  color: #666; /* Color de texto para la descripción del evento */
+}
