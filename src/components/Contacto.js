@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import '../App.css';
 import facebook from '../img/facebook.png';
-import instagram from '../img/instagram.png';
-import twitter from '../img/twitter.png';
+import instagram from '../img/instagram3.png';
+import twitter from '../img/logotwitternuevo.jpeg';
 
 function Contacto() {
   const direccion = "Gamero 2722";
@@ -29,6 +29,7 @@ function Contacto() {
           <li>Teléfono: {telefono}</li>
           <li>Correo electrónico: escuela@nzeladia.cl</li>
         </ul>
+        
 
         {/* Agregar el contenedor de redes sociales */}
         <div className="redes-sociales-container">
@@ -48,23 +49,24 @@ function Contacto() {
               </a>
             </div>
             
-              <div className="icon-container">
-                <a
-                  href="https://twitter.com/zelandia_nueva?lang=bg/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  onClick={() => handleIconClick('twitter')}
-                >
-                  <img
-                    src={twitter}
-                    alt="Logo de Twitter"
-                    className={`icon ${iconHovered === 'twitter' ? 'hovered' : ''}`}
-                  />
-                </a>
-              </div>
-              <div className="icon-container">
+            <div className="icon-container">
               <a
-                href="https://www.facebook.com/EscuelaNuevaZelandia"
+                href="https://twitter.com/zelandia_nueva?lang=bg/"
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => handleIconClick('twitter')}
+              >
+                <img
+                  src={twitter}
+                  alt="Logo de Twitter"
+                  className={`icon ${iconHovered === 'twitter' ? 'hovered' : ''}`}
+                />
+              </a>
+            </div>
+
+            <div className="icon-container">
+              <a
+                href="https://www.facebook.com/EscuelaNuevaZelancia"
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => handleIconClick('facebook')}

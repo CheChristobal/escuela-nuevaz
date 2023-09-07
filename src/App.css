@@ -2,7 +2,8 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: Arial, sans-serif;
+  font-family: "Montserrat";
+  
 }
 li{
   list-style: none;
@@ -13,10 +14,10 @@ nav ul .navbar{
   list-style: none;
   display: flex;
   justify-content: center;
-  background-color: #285599;
+  background-color: #03318c;
   padding: 1rem 0;
-  border-bottom: 3px solid red;
-  border-top: 3px solid red;
+  border-bottom: 3px solid #f20519;
+  border-top: 3px solid #f20519;
   position: fixed; /* Fija el navbar en la parte superior de la página */
   width: 100%; /* Ocupa todo el ancho */
   z-index: 1000; /* Asegura que el navbar esté en la capa superior */
@@ -28,7 +29,7 @@ nav li {
 
 /* Estilos para el enlace activo */
 nav a.active {
-  color: red; /* Cambia el color del enlace activo */
+  color: #f20519; /* Cambia el color del enlace activo */
 }
 
 /* Estilos para el enlace */
@@ -52,13 +53,38 @@ nav a {
   
 }
 
-.hero
-/* Agrega aquí los nombres de las demás secciones */
-{
+/* Estilos para el hero */
+.hero {
+  overflow: hidden;
+  text-align: center;
+  height: 200px; /* Ajusta la altura a 400px */
+  padding: 10rem 0; /* Aumenta el padding vertical */
+  color: red;
+  font-size: 4rem; /* Aumenta el tamaño de fuente */
   -webkit-text-stroke: 2px red; /* Borde de texto rojo */
   text-stroke: 2px red; /* Borde de texto rojo */
-  text-fill-color: transparent; /* Relleno de texto transparente para mostrar el borde */
+  text-fill-color: red; /* Relleno de texto transparente para mostrar el borde */
+  opacity: 0;
+  animation: entrada 6s forwards;
 }
+
+/* Estilos para el hero en dispositivos móviles */
+@media screen and (max-width: 768px) {
+  .hero {
+    height: 300px; /* Ajusta la altura a 300px para dispositivos móviles */
+    padding: 6rem 0; /* Ajusta el padding vertical para dispositivos móviles */
+    font-size: 3rem; /* Ajusta el tamaño de fuente para dispositivos móviles */
+    -webkit-text-stroke: 2px red; /* Borde de texto rojo */
+    text-stroke: 2px red; /* Borde de texto rojo */
+    text-fill-color: red; /* Relleno de texto transparente para mostrar el borde */
+    opacity: 0;
+    animation: entrada 6s forwards;
+  }
+}
+
+
+/* Resto de tus estilos para el hero */
+
 
 @keyframes entrada {
   0% {
@@ -70,23 +96,23 @@ nav a {
 }
 
 /* Estilos para la imagen de fondo */
-.hero:before
-/* Agrega aquí los nombres de las demás secciones */
-{
+/* Estilos para el hero */
+.hero:before {
   content: "";
   position: absolute;
   top: 0;
   left: 0;
-  top: 20px;
   width: 100%;
-  height: 100%;
+  height: 100%; /* Cambia la altura a 400px */
   background-image: url('img/fondoescuela.jpg'); /* Asegúrate de ajustar la ruta de la imagen */
   background-size: cover;
   background-position: 0px;
   z-index: -1;
 }
 
-
+.texto-portada{
+  display: none;
+}
 
 /* Media query para pantallas de celular */
 @media (max-width: 767px) {
@@ -95,8 +121,10 @@ nav a {
     background-position: right; /* Mover la imagen hacia la derecha en celular */
     
   }
+  
 }
 
+  
 
 
 
@@ -175,13 +203,22 @@ img {
     width: calc(50% - 20px);
   }
 }
+
 /* Media query para diseño responsive */
 @media (max-width: 768px) {
   .card-container {
     flex-direction: column; /* Cambia la dirección del flexbox a columna */
     align-items: center; /* Centra las tarjetas horizontalmente */
   }
+
+  .hamburguesa{
+    display: block; /* Muestra el navbar para dispositivos móviles en todo momento */
+
+  }
   
+  .texto-portada{
+    display: block;
+  }
 
   .card {
     width: 100%; /* Ocupa todo el ancho disponible */
@@ -342,7 +379,7 @@ p {
 
 .event-date {
   flex: 0 0 100px;
-  background-color: #FF6B6B; /* Color llamativo */
+  background-color: #f20519; /* Color llamativo */
   color: white; /* Texto en color blanco */
   text-align: center;
   padding: 10px;
@@ -363,3 +400,132 @@ p {
   margin-bottom: 0;
   color: #666; /* Color de texto para la descripción del evento */
 }
+
+
+
+/* Estilos generales para el componente Contacto */
+.contacto-section {
+  background-color: #f8f8f8;
+  padding: 80px 0;
+  text-align: center;
+}
+
+.contacto-title {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.contacto-description {
+  font-size: 1.2rem;
+  color: #666;
+  margin-bottom: 40px;
+}
+
+.contacto-info {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;
+  max-width: 400px;
+  font-size: 1.1rem;
+  color: #444;
+}
+
+/* Estilos para el formulario de contacto */
+.formulario-contacto {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.formulario-title {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.input-field {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+.textarea-field {
+  resize: vertical;
+  min-height: 150px;
+}
+
+.submit-button {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.submit-button:hover {
+  background-color: #03318c;
+}
+ h1, h2{
+  font-family: "Outfit";
+  font-weight: bold;
+ }
+ /* Estilos para el componente EventsComponent */
+
+.events-component {
+  text-align: center;
+  padding: 20px;
+}
+
+.event-cards-container {
+  display: flex;
+  justify-content: flex-start; /* Cambia de 'center' a 'flex-start' para alinear los eventos de izquierda a derecha */
+  flex-wrap: wrap; /* Esto permite que las tarjetas se envuelvan si no caben en la pantalla */
+  gap: 20px; /* Agrega un espacio entre las tarjetas */
+}
+
+.event-card {
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+  background-color: #f7f7f7;
+  transition: transform 0.2s, box-shadow 0.2s;
+  width: 300px; /* Ancho de la tarjeta */
+  cursor: pointer;
+}
+
+.event-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+}
+
+.event-card .event-date {
+  font-weight: bold;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.event-card .event-details h3 {
+  cursor: pointer;
+}
+
+.event-card .event-description {
+  display: none; /* Oculta la descripción del evento por defecto */
+  margin-top: 10px;
+}
+
+.event-card.active .event-description {
+  display: block; /* Muestra la descripción del evento cuando está activo */
+}
+
+.event-card .event-description p {
+  margin: 10px 0;
+}
+
+/* Agrega más estilos según sea necesario */

@@ -10,19 +10,19 @@ function Valores() {
         <p>Nuestro Valores son...</p>
         <div className="card-container">
           <div className="card red expanded center">
-            <h3>Respeto</h3>
+            <h1>Respeto</h1>
             <p>
             Fomentar el respeto en la escuela contribuye a crear un ambiente seguro y armonioso, donde los estudiantes pueden desarrollarse académica y personalmente. Además, prepara a los jóvenes para ser ciudadanos responsables y conscientes de su rol en la sociedad, promoviendo valores de igualdad, convivencia y aprecio por la diversidad.
             </p>
           </div>
           <div className="card blue expanded">
-            <h3>Tolerancia</h3>
+            <h1>Tolerancia</h1>
             <p>
             Promover la tolerancia en la escuela ayuda a crear un ambiente de respeto mutuo y comprensión, donde los estudiantes pueden crecer académica y personalmente. Además, les brinda herramientas para enfrentar situaciones desafiantes en la vida real, y contribuye a formar ciudadanos responsables y comprometidos con la convivencia armoniosa en una sociedad diversa.
             </p>
           </div>
           <div className="card red expanded">
-            <h3>Compromiso</h3>
+            <h1>Compromiso</h1>
             <p>
             Fomentar el compromiso en la escuela ayuda a crear un ambiente dinámico y motivador, donde el aprendizaje es significativo y gratificante. Además, forma estudiantes y profesionales comprometidos con su desarrollo personal y con la construcción de una sociedad responsable y participativa.
             </p>

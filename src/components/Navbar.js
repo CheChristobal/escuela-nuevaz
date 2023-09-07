@@ -22,8 +22,8 @@ function Navbar() {
       </div>
       <ul className={`menu ${menuOpen ? 'abierto' : ''}`}>
         <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#events-component">Eventos</a></li>
         <li><a href="#quienes-somos">Quiénes Somos</a></li>
-        <li><a href="#alumnos-destacados">Alumnos destacados</a></li>
         <li><a href="#nuestra-mision">Nuestra Misión</a></li>
         <li><a href="#vision">Visión</a></li>
         <li><a href="#sellos">Sellos</a></li>
@@ -105,6 +105,7 @@ function Navbar() {
           .menu li {
             margin: 1rem 0;
           }
+          
 
           
         }
