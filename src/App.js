@@ -11,6 +11,7 @@ import Vision from './components/Vision';
 import Sellos from './components/Sellos';
 import Valores from './components/Valores';
 import Contacto from './components/Contacto';
+import ListaProfesores from './components/ListaProfesores';
 
 
 
@@ -27,6 +28,7 @@ function App() {
 
       <QuienesSomos/>
 
+      <ListaProfesores/>
 
       <NuestraMision/>
 

@@ -1,68 +1,39 @@
 import React, { useState } from 'react';
 import fotoperfil from '../img/placeholderalumno.png';
-
+import director from '../img/fotopaginadirector.jpeg';
+import willian from '../img/willian.jpeg';
+import sonia from '../img/sonia.jpeg';
+import paulina from '../img/paulina.jpeg';
 import '../App.css';
 
 function QuienesSomos() {
   const [selectedCard, setSelectedCard] = useState(null);
 
-  const profesores = [
-    {
-      nombre: 'María García',
-      logro: 'Profesora de Música',
-      foto: fotoperfil, // Ruta de la foto del alumno
-      correo: 'Correo: maria3.garcia@example.com', // Texto del correo electrónico
-    },
-    {
-      nombre: 'Juan Martínez',
-      logro: 'Profesor de Lenguaje',
-      foto: fotoperfil, // Ruta de la foto del alumno
-      correo: 'Correo: juan2.martinez@example.com', // Texto del correo electrónico
-    },
-    {
-      nombre: 'Ana López',
-      logro: 'Profesora de Inglés',
-      foto: fotoperfil, // Ruta de la foto del alumno
-      correo: 'Correo: ana2.lopez@example.com', // Texto del correo electrónico
-    },
-    {
-      nombre: 'María García',
-      logro: 'Profesora de Música',
-      foto: fotoperfil, // Ruta de la foto del alumno
-      correo: 'Correo: maria2.garcia@example.com', // Texto del correo electrónico
-    },
-    {
-      nombre: 'Juan Martínez',
-      logro: 'Profesor de Lenguaje',
-      foto: fotoperfil, // Ruta de la foto del alumno
-      correo: 'Correo: juan3.martinez@example.com', // Texto del correo electrónico
-    },
-    // Agrega más profesores aquí
-  ];
+  
 
   const directiva = [
     {
       nombre: 'Williams José Carrero Contreras',
       cargo: 'Inspector General',
-      foto: fotoperfil, // Ruta de la foto del alumno
+      foto: willian, // Ruta de la foto del alumno
       correo: 'Correo: wcarrero@nzelandia.cl', // Texto del correo electrónico
     },
     {
       nombre: 'Nelsol Bobadilla Rodríguez',
       cargo: 'Director',
-      foto: fotoperfil, // Ruta de la foto del alumno
+      foto: director, // Ruta de la foto del alumno
       correo: 'Correo: nbobadilla@nzelandia.cl', // Texto del correo electrónico
     },
     {
       nombre: 'Paulina Andrea Canelo Flores',
       cargo: 'UTP',
-      foto: fotoperfil, // Ruta de la foto del alumno
+      foto: paulina, // Ruta de la foto del alumno
       correo: 'Correo: pcanelo@nzelandia.cl', // Texto del correo electrónico
     },
     {
       nombre: 'Sonia Véronica Espejo Silva',
       cargo: 'Convivencia Escolar',
-      foto: fotoperfil, // Ruta de la foto del alumno
+      foto: sonia, // Ruta de la foto del alumno
       correo: 'Correo: sespejo@nzelandia.cl', // Texto del correo electrónico
     },
     // Agrega más profesores aquí
@@ -107,27 +78,7 @@ function QuienesSomos() {
                 ))}
               </div>
             </div>
-            <div className="content">
-              <h2>Profesores</h2>
-              <p>¡Conoce a nuestros profesores !</p>
-              <div className="alumnos-container">
-                {profesores.map((profesor, index) => (
-                  <div
-                    key={index}
-                    className={`alumno-card ${selectedCard === profesor.correo ? 'active' : ''}`}
-                    onClick={() => handleCardClick(profesor.correo)}
-                  >
-                    <h3>{profesor.nombre}</h3>
-                    <p>{profesor.logro}</p>
-                    {selectedCard === profesor.correo && (
-                      <div className="correo">
-                        <h5>{profesor.correo}</h5>
-                      </div>
-                    )}
-                  </div>
-                ))}
-              </div>
-            </div>
+           
           </section>
         </div>
       </div>
