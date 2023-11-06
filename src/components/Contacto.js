@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import '../App.css';
-import facebook from '../img/facebook.png';
-import instagram from '../img/instagram3.png';
-import twitter from '../img/logotwitternuevo.jpeg';
+import facebook from '../img/facebookcirclegrande.png';
+import instagram from '../img/instagramcirclegrande.png';
+import twitter from '../img/twittercirclegrande.png';
+import iconomapa from '../img/iconomapa.png';
 
 function Contacto() {
   const direccion = "Gamero 2722";
@@ -27,9 +28,18 @@ function Contacto() {
         <ul>
           <li>Dirección: {direccion}, {comuna}</li>
           <li>Teléfono: {telefono}</li>
-          <li>Correo electrónico: escuela@nzeladia.cl</li>
+          <li>Correo electrónico: escuela@nzelandia.cl</li>
         </ul>
-        
+        <a
+          href="https://maps.app.goo.gl/NmPEth5MXot9gXWN7"
+          className="como-llegar-button"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Cómo llegar (Mapa)
+          <img src={iconomapa} alt="Mapa" className="map-icon" />
+        </a>
+
 
         {/* Agregar el contenedor de redes sociales */}
         <div className="redes-sociales-container">
@@ -48,11 +58,13 @@ function Contacto() {
                 />
               </a>
             </div>
-            
+
             <div className="icon-container">
               <a
                 href="https://twitter.com/zelandia_nueva?lang=bg/"
                 target="_blank"
+                style={{ width: '40px' }} // Cambia el tamaño del logo ajustando el valor de 'width'
+
                 rel="noopener noreferrer"
                 onClick={() => handleIconClick('twitter')}
               >

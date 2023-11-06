@@ -6,7 +6,7 @@ function FloatingButton() {
   const [hovered, setHovered] = useState(false);
 
   const scrollToNavbar = () => {
-    const navbar = document.querySelector('.navbar');
+    const navbar = document.querySelector('.header');
     if (navbar) {
       navbar.scrollIntoView({ behavior: 'smooth' });
     }

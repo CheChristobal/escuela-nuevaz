@@ -7,9 +7,7 @@ function NuestraMision() {
     <section id="nuestra-mision">
       <div className="content">
         <h2>Nuestra Misión</h2>
-        <p>Somos una escuela pública que garantiza los derechos y asegura la trayectoria educativa de los y
-las estudiantes de manera inclusiva, valorando la diversidad en un ambiente de tolerancia y
-respeto para aprender a vivir en comunidad de manera armónica.</p>
+        <p>Somos una escuela pública, con un trabajo pedagógico que posibilita el desarrollo de habilidades artísticas, deportivas y de pensamiento crítico de las y los estudiantes, desde un enfoque socio-constructivista, asegurando la trayectoria educativa de los y las estudiantes mediante la construcción de ambientes de tolerancia y respeto, para aprender a vivir con un sentido de protección y cuidado personal y social. Finalmente, por un tema estético, cambiar las letras de los textos, no sé si están en negrita, pero resaltan más que los títulos, idealmente invertir ese problema.</p>
         
       </div>
       <style jsx>{`

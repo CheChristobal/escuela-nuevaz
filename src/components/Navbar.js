@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import '../App.css';
 import FloatingButton from './FloatingButton'; // Asegúrate de ajustar la ruta correcta
 import Logo from '../components/Logo'; // Asegúrate de ajustar la ruta correcta para el archivo del logotipo
@@ -6,6 +6,7 @@ import Logo from '../components/Logo'; // Asegúrate de ajustar la ruta correcta
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [conocenosOpen, setConocenosOpen] = useState(false);
+  const navbarRef = useRef(null);
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
@@ -15,10 +16,29 @@ function Navbar() {
     setConocenosOpen(!conocenosOpen);
   };
 
+  const closeMenu = () => {
+    setMenuOpen(false);
+    setConocenosOpen(false);
+  };
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (navbarRef.current && !navbarRef.current.contains(event.target)) {
+        closeMenu();
+      }
+    };
+
+    document.addEventListener('click', handleClickOutside);
+
+    return () => {
+      document.removeEventListener('click', handleClickOutside);
+    };
+  }, []);
+
   return (
-    <nav className={`navbar ${menuOpen ? 'abierto' : ''}`}>
+    <nav className={`navbar ${menuOpen ? 'abierto' : ''}`} ref={navbarRef}>
       <div className="logo-container">
-        <Logo />
+        {/* <Logo /> */}
       </div>
       <div className="hamburguesa" onClick={toggleMenu}>
         <div className="barra"></div>
@@ -27,7 +47,7 @@ function Navbar() {
       </div>
       <ul className={`menu ${menuOpen ? 'abierto' : ''}`}>
         <li><a href="#inicio">Inicio</a></li>
-        <li><a href="#events-component">Eventos</a></li>
+        <li><a href="#events-component">Informaciones</a></li>
         <li className={`dropdown ${conocenosOpen ? 'abierto' : ''}`}>
           <a href="#" onClick={toggleConocenos}>Conócenos</a>
           <ul className={`submenu ${conocenosOpen ? 'abierto' : ''}`}>
@@ -36,9 +56,9 @@ function Navbar() {
             <li><a href="#vision">Visión</a></li>
             <li><a href="#sellos">Sellos</a></li>
             <li><a href="#valores">Valores</a></li>
-            
           </ul>
         </li>
+        <li><a href="#documentos">Documentos Institucionales</a></li>
         <li><a href="#contacto">Contacto</a></li>
         <FloatingButton />
       </ul>
@@ -52,6 +72,8 @@ function Navbar() {
           padding: 1rem;
           border-bottom: 3px solid red;
           border-top: 3px solid red;
+          background: linear-gradient(to bottom, #285599, #002a5c); /* Agrega el degradado deseado */
+
         }
 
         .logo-container {
@@ -98,16 +120,16 @@ function Navbar() {
           margin: 0;
           padding: 0;
           position: absolute;
-          top: 100%; /* Coloca el menú debajo del elemento padre */
+          top: 100%;
           left: 0;
           background-color: #285599;
-          z-index: 1; /* Asegura que esté por encima de otros elementos */
-          padding: 0.5rem; /* Agregar un poco de padding */
+          z-index: 1;
+          padding: 0.5rem;
         }
 
         .submenu li {
-          margin: 0.5rem 0; /* Ajustar el margen entre elementos */
-          padding: 3px; /* Agregar un poco de padding a los elementos del menú desplegable */
+          margin: 0.5rem 0;
+          padding: 3px;
         }
 
         .submenu a {
@@ -117,8 +139,8 @@ function Navbar() {
 
         .dropdown.abierto .submenu {
           display: block;
-          position: relative; /* Cambiar la posición a relativa para que aparezca debajo del dropdown */
-          top: 0; /* Alinear el menú con el elemento padre */
+          position: relative;
+          top: 0;
           left: 0;
           background-color: #285599;
           z-index: 1;
@@ -133,7 +155,7 @@ function Navbar() {
           .menu {
             display: none;
             position: absolute;
-            top: 70px;
+            top: 90px;
             right: 0;
             background-color: #285599;
             width: 100%;
@@ -142,7 +164,7 @@ function Navbar() {
 
           .menu.abierto {
             display: flex;
-            flex-direction: column; /* Cambiar la dirección del menú en dispositivos móviles */
+            flex-direction: column;
           }
 
           .menu li {
@@ -151,8 +173,8 @@ function Navbar() {
 
           .dropdown.abierto .submenu {
             display: block;
-            position: relative; /* Cambiar la posición a relativa para que aparezca debajo del dropdown */
-            top: 0; /* Alinear el menú con el elemento "Conócenos" */
+            position: relative;
+            top: 0;
             left: 0;
             background-color: #285599;
             z-index: 1;
@@ -162,15 +184,15 @@ function Navbar() {
         /* Media query para pantallas más grandes (escritorio) */
         @media (min-width: 769px) {
           .menu {
-            position: relative; /* Cambiar la posición a relativa para que esté dentro del navbar */
-            top: 0; /* Restablecer la posición */
+            position: relative;
+            top: 0;
           }
 
           .menu.abierto {
             display: flex;
-            flex-direction: row; /* Mostrar los elementos en fila en modo escritorio */
-            background-color: transparent; /* Quitar el fondo en modo escritorio */
-            width: auto; /* Quitar el ancho fijo en modo escritorio */
+            flex-direction: row;
+            background-color: transparent;
+            width: auto;
           }
 
           .menu li {
@@ -179,8 +201,8 @@ function Navbar() {
 
           .dropdown.abierto .submenu {
             display: block;
-            position: absolute; /* Cambiar la posición a absoluta para que aparezca debajo del dropdown */
-            top: 100%; /* Alinear el menú con el elemento "Conócenos" */
+            position: absolute;
+            top: 100%;
             left: 0;
             background-color: #285599;
             z-index: 1;

@@ -127,6 +127,12 @@ function ListaProfesores() {
       correo: 'eramirez@nzelandia.cl',
       ciclo: "Equipo PIE",
     },
+    {
+      nombre: 'Pablo Ingacio Carreño',
+      cargo: 'Profesor Diferencial PIE',
+      correo: 'pcarreno@nzelandia.cl',
+      ciclo: "Equipo PIE",
+    },
     
     
     // Agregar más profesores con diferentes ciclos
@@ -198,8 +204,9 @@ function ListaProfesores() {
           {obtenerProfesoresPorCiclo(ciclo, profesores).map((profesor, index) => (
             <li key={index} className="profesor-item">
               <strong>Nombre:</strong> {profesor.nombre} <br />
-              <strong>Cargo:</strong> {profesor.cargo} <br />
-              <strong>Correo:</strong> {profesor.correo}
+              <strong>Profesor(a) Jefe de:</strong> {profesor.cargo} <br />
+              <strong>Correo:</strong>{" "}
+              <span style={{ userSelect: "none" }}>{profesor.correo}</span>
             </li>
           ))}
         </ul>
@@ -215,9 +222,9 @@ function ListaProfesores() {
           {obtenerProfesoresPorCiclo(ciclo, profesores).map((profesor, index) => (
             <li key={index} className="profesor-item">
               <strong>Nombre:</strong> {profesor.nombre} <br />
-              <strong>Cargo:</strong> {profesor.cargo} <br />
-              <strong>Correo:</strong> {profesor.correo}
-            </li>
+              <strong></strong> {profesor.cargo} <br />
+              <strong>Correo:</strong>{" "}
+              <span style={{ userSelect: "none" }}>{profesor.correo}</span>            </li>
           ))}
         </ul>
       </div>
@@ -230,9 +237,9 @@ function ListaProfesores() {
         {profesoresAsignatura.map((profesor, index) => (
           <li key={index} className="profesor-item">
             <strong>Nombre:</strong> {profesor.nombre} <br />
-            <strong>Cargo:</strong> {profesor.cargo} <br />
-            <strong>Correo:</strong> {profesor.correo}
-          </li>
+            <strong>Profesor(a) de</strong> {profesor.cargo} <br />
+            <strong>Correo:</strong>{" "}
+            <span style={{ userSelect: "none" }}>{profesor.correo}</span>          </li>
         ))}
       </ul>
       </div>
@@ -300,6 +307,7 @@ function ListaProfesores() {
             margin-top: 20px; /* Agrega espacio entre columnas en dispositivos móviles */
           }
         }
+        
       `}</style>
     </div>
   );

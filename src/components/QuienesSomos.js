@@ -1,9 +1,5 @@
 import React, { useState } from 'react';
-import fotoperfil from '../img/placeholderalumno.png';
-import director from '../img/fotopaginadirector.jpeg';
-import willian from '../img/willian.jpeg';
-import sonia from '../img/sonia.jpeg';
-import paulina from '../img/paulina.jpeg';
+
 import '../App.css';
 
 function QuienesSomos() {
@@ -13,29 +9,27 @@ function QuienesSomos() {
 
   const directiva = [
     {
-      nombre: 'Williams José Carrero Contreras',
-      cargo: 'Inspector General',
-      foto: willian, // Ruta de la foto del alumno
-      correo: 'Correo: wcarrero@nzelandia.cl', // Texto del correo electrónico
-    },
-    {
       nombre: 'Nelsol Bobadilla Rodríguez',
       cargo: 'Director',
-      foto: director, // Ruta de la foto del alumno
       correo: 'Correo: nbobadilla@nzelandia.cl', // Texto del correo electrónico
     },
     {
+      nombre: 'William José Carrero Contreras',
+      cargo: 'Inspector General',
+      correo: 'Correo: wcarrero@nzelandia.cl', // Texto del correo electrónico
+    },
+    
+    {
       nombre: 'Paulina Andrea Canelo Flores',
       cargo: 'UTP',
-      foto: paulina, // Ruta de la foto del alumno
       correo: 'Correo: pcanelo@nzelandia.cl', // Texto del correo electrónico
     },
     {
       nombre: 'Sonia Véronica Espejo Silva',
       cargo: 'Convivencia Escolar',
-      foto: sonia, // Ruta de la foto del alumno
       correo: 'Correo: sespejo@nzelandia.cl', // Texto del correo electrónico
     },
+    
     // Agrega más profesores aquí
   ];
 
@@ -52,13 +46,14 @@ function QuienesSomos() {
       <div className="content">
         <h2>Quiénes Somos</h2>
         <p>
-          Somos una institución educativa comprometida con la excelencia académica y el desarrollo integral de nuestros estudiantes. Nuestra misión es brindar educación de calidad y fomentar valores fundamentales para formar ciudadanos responsables y comprometidos con la sociedad.
-        </p>
+        Somos una escuela pública, de educación Parvularia y Básica, que fue fundada el año 1966 en el marco de la reforma educativa de 1965. En la actualidad depende la administración comunal de la Municipalidad de Independencia la cual, según la ley 18.695, tiene por función satisfacer las necesidades de la comunidad local y asegurar su participación en el progreso económico, social y cultural de las respectivas comunas. Nos encontramos ubicados en el sector norte de la Región Metropolitana en la ciudad de Santiago, comuna de Independencia y específicamente en la población Juan Antonio Ríos. Esta terminó de ser edificada hacia la década del 70, por lo cual diversas generaciones del barrio y sus alrededores han estudiado en la escuela que hoy conocemos con el nombre de Nueva Zelandia.        </p>
         <div className="image-container">
           <section>
             <div className="content">
               <h2>Equipo de Gestion</h2>
               <p>¡Conoce a nuestro Equipo directivo !</p>
+              
+              {/* <img src={fotoquienesomos} /> */}
               <div className="alumnos-container">
                 {directiva.map((directivo, index) => (
                   <div
@@ -66,12 +61,12 @@ function QuienesSomos() {
                     className={`alumno-card ${selectedCard === directivo.correo ? 'active' : ''}`}
                     onClick={() => handleCardClick(directivo.correo)}
                   >
-                    <img src={directivo.foto} alt={directivo.nombre} />
+                   
                     <h3>{directivo.nombre}</h3>
                     <p>{directivo.cargo}</p>
                     {selectedCard === directivo.correo && (
-                      <div className="correo">
-                        <h5>{directivo.correo}</h5>
+                    <div className="correo" style={{ userSelect: 'none' }}>
+                    <h5>{directivo.correo}</h5>
                       </div>
                     )}
                   </div>
@@ -128,9 +123,10 @@ function QuienesSomos() {
         }
         h5{
           font-size: 15px;
-        }
+        } 
 
         /* Resto de los estilos... */
+        
       `}</style>
     </section>
   );

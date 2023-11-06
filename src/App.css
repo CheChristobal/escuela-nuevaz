@@ -3,7 +3,11 @@ body {
   margin: 0;
   padding: 0;
   font-family: "Montserrat";
+
   
+}
+h1{
+  font-family: "Outfit";
 }
 li{
   list-style: none;
@@ -59,7 +63,7 @@ nav a {
   text-align: center;
   height: 200px; /* Ajusta la altura a 400px */
   padding: 10rem 0; /* Aumenta el padding vertical */
-  color: red;
+  color: #03318c;
   font-size: 4rem; /* Aumenta el tamaño de fuente */
   -webkit-text-stroke: 2px red; /* Borde de texto rojo */
   text-stroke: 2px red; /* Borde de texto rojo */
@@ -71,14 +75,16 @@ nav a {
 /* Estilos para el hero en dispositivos móviles */
 @media screen and (max-width: 768px) {
   .hero {
+    overflow: hidden;
     height: 300px; /* Ajusta la altura a 300px para dispositivos móviles */
     padding: 6rem 0; /* Ajusta el padding vertical para dispositivos móviles */
     font-size: 3rem; /* Ajusta el tamaño de fuente para dispositivos móviles */
-    -webkit-text-stroke: 2px red; /* Borde de texto rojo */
-    text-stroke: 2px red; /* Borde de texto rojo */
-    text-fill-color: red; /* Relleno de texto transparente para mostrar el borde */
+    -webkit-text-stroke: 0px rgb(0, 94, 255); /* Borde de texto rojo */
+    text-stroke: 2px rgb(254, 254, 254); /* Borde de texto rojo */
+    text-fill-color: rgb(249, 249, 254); /* Relleno de texto transparente para mostrar el borde */
     opacity: 0;
     animation: entrada 6s forwards;
+    justify-content: initial;
   }
 }
 
@@ -104,7 +110,7 @@ nav a {
   left: 0;
   width: 100%;
   height: 100%; /* Cambia la altura a 400px */
-  background-image: url('img/fondoescuela.jpg'); /* Asegúrate de ajustar la ruta de la imagen */
+  background-image: url('img/portadaescuela.png'); /* Asegúrate de ajustar la ruta de la imagen */
   background-size: cover;
   background-position: 0px;
   z-index: -1;
@@ -112,6 +118,7 @@ nav a {
 
 .texto-portada{
   display: none;
+  font-size: 40px;
 }
 
 /* Media query para pantallas de celular */
@@ -317,13 +324,13 @@ p {
 .redes-sociales-container {
   display: flex;
   justify-content: center;
-  margin-top: 20px; /* Ajusta el margen superior según tus necesidades */
 }
 
 /* Estilos para los iconos de redes sociales */
 .icon-container {
   margin: 0 10px; /* Espacio entre los iconos */
 }
+
 
 
 
@@ -340,16 +347,16 @@ p {
   margin: 0 10px; /* Espacio entre los iconos */
 }
 
-/* Estilos para el contenedor de redes sociales */
-.redes-sociales-container {
-  display: flex;
-  justify-content: center; /* Alinea los iconos a la derecha */
-  align-items: center; /* Alinea verticalmente los iconos */
-  margin-top: 20px; /* Ajusta el margen superior según tus necesidades */
+
+/* Estilos para los iconos cuando se les hace hover */
+.icon.hovered {
+  transform: scale(1.1); /* Escala el icono al hacer hover */
+  transition: transform 0.3s ease; /* Agrega una transición suave al hacer hover */
 }
 
 /* Estilos para los iconos de redes sociales */
 .icon-container {
+  display: inline-block; /* Mostrar los íconos en línea */
   margin: 0 10px; /* Espacio entre los iconos */
 }
 .events-component {
@@ -529,3 +536,200 @@ p {
 }
 
 /* Agrega más estilos según sea necesario */
+/* DocumentList.css */
+.document-list {
+  background-color: #f5f5f5;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+}
+
+.document-list ul {
+  list-style: none;
+  padding: 0;
+}
+
+.document-list li {
+  margin: 10px 0;
+  padding: 10px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.document-list li:hover {
+  transform: scale(1.03);
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+}
+
+.document-list a {
+  text-decoration: none;
+  color: #333;
+}
+
+.document-list a:hover {
+  color: #007bff;
+}
+
+/* En tu archivo CSS (App.css) */
+.como-llegar-button {
+  position: relative;
+  background-color: #3d53cd;
+  color: #fff;
+  font-size: 16px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.map-icon {
+  position: absolute;
+  right: -35px; /* Ajusta la distancia desde el borde derecho del botón */
+  top: 50%; /* Alinea verticalmente el icono en el centro del botón */
+  transform: translateY(-50%); /* Centra verticalmente el icono en relación al botón */
+}
+
+.como-llegar-button:hover {
+  background-color: #df3c36;
+  text-decoration: none;
+}
+body{
+  font-weight: normal; /* Esto quita la negrita */
+  
+}
+/* Estilo para el pie de página */
+.footer {
+  background-color: #285599;
+  color: white;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap; /* Permite que las columnas se ajusten en dispositivos pequeños */
+  border-top: 2px solid red; /* Línea superior de separación */
+  height: 300px;
+}
+
+/* Estilo para la columna del logotipo */
+.footer-column:nth-child(1) {
+  flex: 1; /* Ocupa todo el espacio disponible */
+  text-align: left;
+  border-right: 2px solid white; /* Línea de separación a la derecha del logotipo */
+  padding-right: 1rem;
+}
+
+.footer-logo {
+  width: 100px; /* Ajusta el ancho del logotipo según tus necesidades */
+}
+
+/* Estilo para la columna de enlaces */
+.footer-column:nth-child(2) {
+  flex: 2; /* Ocupa el doble de espacio que las otras columnas */
+  padding-left: 1rem;
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-links li {
+}
+
+/* Estilo para la columna de redes sociales */
+.footer-column:nth-child(3) {
+  flex: 1; /* Ocupa menos espacio que la columna de enlaces */
+  text-align: right;
+  padding-left: 1rem;
+  border-left: 2px solid white; /* Línea de separación a la izquierda de las redes sociales */
+}
+
+.footer-social {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-social li {
+  margin-bottom: 1rem; /* Espacio entre elementos de la lista */
+}
+
+.footer-social a {
+  color: white;
+  text-decoration: none;
+}
+
+/* Estilo para los enlaces en el pie de página */
+.footer-links a {
+  color: white;
+  text-decoration: none;
+}
+ 
+/* Estilo para los iconos cuando se hace hover */
+.icon:hover {
+  color: white; /* Cambia el color del texto (si lo hubiera) al que desees */
+  transform: scale(1.1); /* Cambia el tamaño del icono al hacer hover (opcional) */
+  transition: background-color 0.3s, color 0.3s, transform 0.3s; /* Agrega transiciones suaves para los cambios */
+}
+
+
+.footer-social a:hover img {
+  filter: brightness(1.2); /* Aumenta el brillo al hacer hover */
+}
+
+
+
+/* Media query para dispositivos con un ancho máximo de 768px (ajusta según tus necesidades) */
+@media (max-width: 768px) {
+  .footer {
+    background-position: right; /* Mueve la imagen hacia la derecha */
+  }
+}
+
+/* Estilo para el fondo del Header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: left;
+  padding: 10px;
+  color: white;
+  background: url("img/fondoheader.png"); /* Reemplaza con la ruta de tu imagen de fondo */
+  height: 170px;
+  
+
+  
+}
+
+/* Estilo para la columna de redes sociales */
+.footer-column {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Esto centrará horizontalmente los íconos */
+}
+
+/* Estilo para los íconos de redes sociales */
+.footer-social {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column; /* Esto alineará los íconos de arriba hacia abajo */
+  gap: 10px; /* Espacio entre los íconos, ajusta según sea necesario */
+  align-items: center; /* Esto centrará verticalmente los íconos en la columna */
+}
+
+.footer-social li {
+  display: inline;
+}
+
+/* Estilos para dispositivos móviles (ancho máximo de 768px) */
+@media (max-width: 768px) {
+  .header {
+    background-image: url('img/header\ celular.png');
+    background-size: 100%; /* Cambia el valor a lo que desees para ajustar el tamaño */
+
+
+  }
+}

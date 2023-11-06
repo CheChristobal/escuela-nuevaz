@@ -7,11 +7,7 @@ function Vision() {
     <section id="vision">
       <div className="content">
         <h2>Visión</h2>
-        <p>Aspiramos a constituirnos en una institución que forme en valores a través de la participación,
-            que considere la riqueza sociocultural para promover la inclusión y que logre potenciar en los
-            estudiantes habilidades personales, artísticas y deportivas como un medio para enfrentar los
-            desafíos de la sociedad actual y aportar de manera consciente, activa y reflexiva en pro de su
-            trasformación personal y social.</p>
+        <p>Aspiramos a constituirnos en una comunidad educativa democrática, tolerante y respetuosa, que considera la realidad sociocultural de estudiantes y familias, para promover la creatividad y el respeto por el entorno, mediante experiencias educativas innovadoras, desafiantes y contextualizadas, aportando a la formación subjetiva e identitaria de NNA.</p>
         
       </div>
       <style jsx>{`

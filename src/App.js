@@ -12,12 +12,16 @@ import Sellos from './components/Sellos';
 import Valores from './components/Valores';
 import Contacto from './components/Contacto';
 import ListaProfesores from './components/ListaProfesores';
+import DocumentList from './components/DocumentList'
+import Headers from './components/Header'
 
 
 
 function App() {
   return (
     <div className="App">
+      <Headers/>
+      
       <Navbar />
 
       <Inicio/>
@@ -38,9 +42,12 @@ function App() {
 
       <Valores/>
 
+      <DocumentList/>
+
       <Contacto/>
 
       <Footer />
+
     </div>
   );
 }
